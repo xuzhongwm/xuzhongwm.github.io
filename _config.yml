@@ -22,8 +22,8 @@ repository               : "xuzhongwm/xuzhongwm.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
-  name             : "Xuzhong Wang 王旭中"
+  avatar           : "profile.jpg"
+  name             : "Xuzhong Wang | 王旭中"
   pronouns         : # example: "she/her"  
   bio              : "Math & CS Undergrad @ William & Mary"
   location         : "Williamsburg, VA"
