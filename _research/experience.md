@@ -1,3 +1,9 @@
+---
+title: Research
+layout: page
+permalink: /research/
+---
+
 # 🧠 Research Portfolio
 
 **Interests:** Graph theory, Accelerated computing, RL with LLMs
