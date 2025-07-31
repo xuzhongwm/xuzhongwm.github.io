@@ -292,7 +292,9 @@ defaults:
       path: ""
       type: resarch
     values:
-      layout: page
+      layout: single
+      author_profile: true
+      
 
 
 # Sass/SCSS
