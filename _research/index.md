@@ -42,7 +42,6 @@ Develop and updates Akita, a flexible, high-performance, and user-friendly engin
 - Programming Language: Python, JavaScript, Go, Java, 
 - Frontend: React, Tailwind, HTML/CSS  
 - Backend & Data: Firebase, SQLite  
-- Research Tools: LaTeX, Zotero, Git, VS Code  
+- Research Tools: LaTeX, Zotero, Git, VSCode  
 - Theoretical Areas: Graph theory, reconfiguration, algorithm analysis  
 
----
