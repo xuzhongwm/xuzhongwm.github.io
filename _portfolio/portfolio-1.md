@@ -1,5 +1,5 @@
 ---
-title: "Akita"
+title: "Akita Simulator Engine"
 excerpt: "A flexible, high-performance, user-friendly computer architecture simulator engine<br/><img src='/images/akita.jpg'>"
 collection: portfolio
 ---
