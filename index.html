@@ -6,225 +6,88 @@
 <title>Xuzhong Wang</title>
 <meta name="description" content="Xuzhong Wang — CS student at Columbia University, researcher in reinforcement learning, LLMs, and graph theory.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>XW</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
-
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="#top">Xuzhong Wang</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="site-nav" id="siteNav">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#talks">Talks</a>
-      <a href="#awards">Awards</a>
-      <a href="#contact">Contact</a>
+    <a class="brand" href="index.html">Xuzhong Wang</a>
+    <nav class="site-nav">
+      <a href="cv.html">CV</a>
+      <a href="mailto:xw3193@columbia.edu">Email</a>
+      <a href="https://github.com/xuzhongwang" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/xuzhong-wang" target="_blank" rel="noopener">LinkedIn</a>
     </nav>
   </div>
 </header>
 
-<main id="main">
+<main>
 
-  <section id="top" class="hero">
+  <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">Computer Science &amp; Mathematics</p>
       <h1>Xuzhong Wang</h1>
       <p class="lede">
-        B.S. Computer Science candidate at Columbia University, and B.S. Mathematics &amp; Computer Science
-        (Honors in Mathematics) at William &amp; Mary. I work on multi-objective reinforcement learning for
-        LLM knowledge editing and unlearning, and on structural graph theory (list-recoloring).
+        CS @ Columbia University · Math &amp; CS (Honors) @ William &amp; Mary. I work on
+        multi-objective reinforcement learning for LLMs and on structural graph theory.
       </p>
-      <div class="hero-links">
-        <a class="btn btn-primary" href="mailto:xw3193@columbia.edu">Email</a>
-        <a class="btn" href="https://github.com/xuzhongwang" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="https://linkedin.com/in/xuzhong-wang" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
     </div>
   </section>
 
-  <section id="about" class="section">
+  <section class="section">
     <div class="wrap">
-      <h2>About</h2>
+      <h2>Research</h2>
       <p>
-        I'm an undergraduate researcher working across machine learning and mathematics. At the
-        <strong>D3i Lab</strong>, I design multi-objective reinforcement learning methods for reliable and
-        specific in-context knowledge editing, and I'm currently investigating robust LLM unlearning. My
-        honors thesis in graph theory develops new discharging techniques for bounding recoloring
-        sequences under sparsity constraints. I've also contributed to <strong>Akita</strong>, an
-        open-source computer architecture simulator, and worked as a machine learning engineer intern
-        building LLM agent pipelines for document analysis.
+        My work centers on multi-objective reinforcement learning for reliable, specific in-context
+        knowledge editing, with an emphasis on avoiding reward hacking — and, more recently, on robust
+        methods for LLM unlearning. In parallel, my mathematics thesis develops new discharging
+        techniques for bounding recoloring sequences in sparse graphs, improving known bounds for list
+        recoloring.
       </p>
     </div>
   </section>
 
-  <section id="research" class="section alt">
+  <section class="section">
     <div class="wrap">
-      <h2>Research Experience</h2>
-
-      <article class="entry">
-        <div class="entry-head">
-          <h3>Undergraduate Researcher, D3i Lab</h3>
-          <span class="entry-date">May 2025 – Present</span>
-        </div>
-        <p class="entry-sub">Advisors: Haipeng Chen, Yanfu Zhang</p>
-        <ul>
-          <li>Designed and implemented a multi-objective RL framework to train an auxiliary retriever policy for in-context knowledge editing.</li>
-          <li>Mitigated reward hacking observed in prior work via constrained reward formulation, improving editing specificity by ~10% over existing baselines.</li>
-          <li>Currently investigating robust LLM unlearning and developing improved multi-objective RL algorithms for LLM post-training.</li>
-        </ul>
-      </article>
-
-      <article class="entry">
-        <div class="entry-head">
-          <h3>Undergraduate Honors Thesis, Graph Theory</h3>
-          <span class="entry-date">March 2025 – May 2026</span>
-        </div>
-        <p class="entry-sub">Advisors: Daniel W. Cranston, Gexin Yu</p>
-        <ul>
-          <li>Introduced the Generalized Extension Lemma, strengthening the Extension Lemma for bounding recoloring sequences from a single vertex to arbitrary subgraphs.</li>
-          <li>Developed a global discharging argument that exploits global graph structure, extending beyond classical local discharging to obtain sharper density bounds.</li>
-          <li>Proved that 5-list recoloring has linear diameter for mad(G) &lt; 3 − ε; improved the linear bound for 6-list recoloring from 3.4 to 3.75 − ε.</li>
-        </ul>
-      </article>
-
-      <article class="entry">
-        <div class="entry-head">
-          <h3>Undergraduate Researcher, Scalable Architecture Lab</h3>
-          <span class="entry-date">May 2024 – November 2025</span>
-        </div>
-        <p class="entry-sub">Advisor: Yifan Sun</p>
-        <ul>
-          <li>Implemented a data recording tool in Go and SQLite for simulation data tracking, enabling efficient read/write support for experiments.</li>
-          <li>Maintain Akita, a computer architecture simulator engine, enhancing developer experience through event-driven design and smart ticking for simulation.</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <section id="publications" class="section">
-    <div class="wrap">
-      <h2>Publications &amp; Preprints</h2>
-      <p class="note">† Authors listed alphabetically (mathematics convention). * Equal contribution.</p>
-      <ol class="pub-list">
+      <h2>Publications</h2>
+      <ul class="compact-list">
         <li>
-          <span class="pub-title">Towards Reliable, Generalizable, and Specific In-Context Knowledge Editing via Multi-Objective Reinforcement Learning.</span>
-          <span class="pub-authors"><strong>X. Wang</strong>, M. Jiang, T. Nair, G. Bhusal, Y. Zhang, H. Chen.</span>
-          <span class="pub-venue">Under review, ACL ARR 2026 (May).</span>
+          <span class="item-title">Towards Reliable, Generalizable, and Specific In-Context Knowledge Editing via Multi-Objective Reinforcement Learning</span>
+          <span class="item-meta">Under review, ACL ARR 2026</span>
         </li>
         <li>
-          <span class="pub-title">Adaptive Context Selection for In-Context Learning via Steering Prediction.</span>
-          <span class="pub-authors">T. Nair, M. Jiang, <strong>X. Wang</strong>, A. Gao, G. Zhou, H. Chen, Y. Zhang.</span>
-          <span class="pub-venue">Under review, ACL ARR 2026 (May).</span>
+          <span class="item-title">Adaptive Context Selection for In-Context Learning via Steering Prediction</span>
+          <span class="item-meta">Under review, ACL ARR 2026</span>
         </li>
         <li>
-          <span class="pub-title">Akita: A High Usability Simulation Framework for Computer Architecture.</span>
-          <span class="pub-authors">S. Al Jannat, Y. Li, M. He, <strong>X. Wang</strong>, H. Zhao, J. Sun, D. Xu, E. Xu, Y. Sun.</span>
-          <span class="pub-venue">arXiv:2604.28073, 2026.</span>
+          <span class="item-title">Akita: A High Usability Simulation Framework for Computer Architecture</span>
+          <span class="item-meta">arXiv:2604.28073, 2026</span>
         </li>
         <li>
-          <span class="pub-title">List-Recoloring of Graphs with Small Maximum Average Degree. †</span>
-          <span class="pub-authors">D. Cranston, <strong>Xuzhong Wang</strong>, G. Yu.</span>
-          <span class="pub-venue">Submitted, 2026.</span>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="experience" class="section alt">
-    <div class="wrap">
-      <h2>Professional Experience</h2>
-
-      <article class="entry">
-        <div class="entry-head">
-          <h3>Machine Learning Engineer Intern, AnytimeAI</h3>
-          <span class="entry-date">June 2026 – Present</span>
-        </div>
-        <p class="entry-sub">White Plains, NY</p>
-        <ul>
-          <li>Design LLM agent pipelines for cross-document correlation analysis of legal documents.</li>
-          <li>Built an agent routing/advisor tool that reduces model inference costs by ~60%.</li>
-          <li>Evaluated a multimodal ensemble for extracting and analyzing tabular data from plain text, improving task performance by ~8%.</li>
-        </ul>
-      </article>
-
-      <article class="entry">
-        <div class="entry-head">
-          <h3>Machine Learning Engineer Intern, Bestlink Technology</h3>
-          <span class="entry-date">May 2024 – July 2024</span>
-        </div>
-        <p class="entry-sub">Nanjing, Jiangsu</p>
-        <ul>
-          <li>Designed a data retrieval pipeline with OpenCV to extract QA pairs from images.</li>
-          <li>Partnered with senior engineers to architect a LangChain-based LLM agent workflow powering a question-answering tool for consulting clients.</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <section id="education" class="section">
-    <div class="wrap">
-      <h2>Education</h2>
-
-      <article class="entry">
-        <div class="entry-head">
-          <h3>Columbia University, Fu Foundation School of Engineering</h3>
-          <span class="entry-date">May 2028 (expected)</span>
-        </div>
-        <p class="entry-sub">B.S. in Computer Science</p>
-      </article>
-
-      <article class="entry">
-        <div class="entry-head">
-          <h3>College of William &amp; Mary</h3>
-          <span class="entry-date">May 2026</span>
-        </div>
-        <p class="entry-sub">B.S. in Mathematics and Computer Science, Honors in Mathematics · GPA: 3.99/4.0</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="talks" class="section alt">
-    <div class="wrap">
-      <h2>Talks &amp; Presentations</h2>
-      <ul class="plain-list">
-        <li>
-          <span class="pub-title">Poster: “List-Recoloring of Graphs with Small Maximum Average Degree.”</span>
-          <span class="pub-venue">Joint Mathematics Meetings (JMM), Washington D.C., January 2026.</span>
+          <span class="item-title">List-Recoloring of Graphs with Small Maximum Average Degree</span>
+          <span class="item-meta">Submitted, 2026</span>
         </li>
       </ul>
     </div>
   </section>
 
-  <section id="awards" class="section">
+  <section class="section">
     <div class="wrap">
-      <h2>Grants &amp; Awards</h2>
-      <ul class="plain-list">
-        <li>Charles Center Summer Research Grant, College of William &amp; Mary, 2025, 2026.</li>
-        <li>Semester Research Grant, College of William &amp; Mary, 2025.</li>
-        <li>Cissy Patterson Grant for Research, College of William &amp; Mary, 2025.</li>
-        <li>JMM Travel Grant, Department of Mathematics, College of William &amp; Mary, 2026.</li>
+      <h2>Projects &amp; Work</h2>
+      <ul class="compact-list">
+        <li>
+          <span class="item-title">Akita</span>
+          <span class="item-meta">Maintain an open-source computer architecture simulator — event-driven design, smart ticking, and a Go/SQLite data recording tool.</span>
+        </li>
+        <li>
+          <span class="item-title">AnytimeAI</span>
+          <span class="item-meta">ML engineer intern building LLM agent pipelines for legal document analysis; agent routing tool cut inference costs ~60%.</span>
+        </li>
+        <li>
+          <span class="item-title">Bestlink Technology</span>
+          <span class="item-meta">ML engineer intern; OpenCV data retrieval pipeline and a LangChain-based QA agent for consulting clients.</span>
+        </li>
       </ul>
-    </div>
-  </section>
-
-  <section id="contact" class="section alt">
-    <div class="wrap contact-wrap">
-      <h2>Contact</h2>
-      <p>Reach out via email or find me on GitHub and LinkedIn.</p>
-      <div class="hero-links">
-        <a class="btn btn-primary" href="mailto:xw3193@columbia.edu">xw3193@columbia.edu</a>
-        <a class="btn" href="https://github.com/xuzhongwang" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="https://linkedin.com/in/xuzhong-wang" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
     </div>
   </section>
 
@@ -232,7 +95,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>&copy; <span id="year"></span> Xuzhong Wang.</p>
+    <p>&copy; <span id="year"></span> Xuzhong Wang · <a href="cv.html">Full CV</a></p>
   </div>
 </footer>
 
