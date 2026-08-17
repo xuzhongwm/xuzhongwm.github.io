@@ -236,6 +236,18 @@ h1 {
   margin-bottom: 0.8rem;
 }
 
+/* CV PDF embed */
+#cv-pdf .wrap {
+  max-width: 900px;
+}
+
+.pdf-embed {
+  width: 100%;
+  height: 85vh;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
 /* Footer */
 .site-footer {
   padding: 2rem 0;
@@ -246,6 +258,10 @@ h1 {
   font-size: 0.8rem;
   color: var(--text-muted);
   margin: 0;
+}
+
+.site-footer p + p {
+  margin-top: 0.3rem;
 }
 
 .site-footer a {
