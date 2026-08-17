@@ -1,11 +1,12 @@
 :root {
   --bg: #ffffff;
-  --bg-alt: #f6f5f2;
+  --bg-alt: #f5f7f9;
   --text: #1c1b19;
   --text-muted: #5b5850;
-  --accent: #8b2e2e;
-  --accent-soft: #f1e3e0;
-  --border: #e4e1da;
+  --accent: #1d4f91;
+  --accent-soft: #dfeaf4;
+  --brand-blue: #b9d9eb;
+  --border: #e1e6ea;
   --shadow: 0 1px 2px rgba(28, 27, 25, 0.04), 0 6px 16px rgba(28, 27, 25, 0.05);
   --max-width: 680px;
   --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
@@ -15,17 +16,23 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #161513;
-    --bg-alt: #1d1c19;
+    --bg-alt: #1a1d20;
     --text: #eae7e0;
     --text-muted: #a8a49a;
-    --accent: #d98a8a;
-    --accent-soft: #2c211f;
-    --border: #2c2a26;
+    --accent: #8fc1e8;
+    --accent-soft: #1e2c3a;
+    --brand-blue: #3f6a90;
+    --border: #2a2d2f;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.25);
   }
 }
 
 * { box-sizing: border-box; }
+
+.top-bar {
+  height: 4px;
+  background: linear-gradient(90deg, var(--brand-blue), var(--accent));
+}
 
 body {
   margin: 0;
@@ -157,11 +164,34 @@ h1 {
   font-style: italic;
 }
 
+.hero-bio-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.avatar {
+  width: 108px;
+  height: 108px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid var(--brand-blue);
+  box-shadow: var(--shadow);
+  flex-shrink: 0;
+}
+
 .bio {
   font-size: 1.05rem;
   color: var(--text);
   max-width: 58ch;
   margin: 0;
+}
+
+@media (max-width: 480px) {
+  .hero-bio-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .hero-small .lede {
