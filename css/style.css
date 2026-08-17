@@ -100,6 +100,13 @@ h1 {
   margin: 0;
 }
 
+.bio {
+  font-size: 1rem;
+  color: var(--text);
+  max-width: 60ch;
+  margin: 0 0 0.9rem;
+}
+
 .lede {
   font-size: 1.05rem;
   color: var(--text-muted);
