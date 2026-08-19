@@ -314,6 +314,46 @@ h1 {
   margin-top: 0.2rem;
 }
 
+/* Publication cards (home page) */
+.pub-cards li {
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pub-cards li:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 14px rgba(28, 27, 25, 0.08), 0 12px 28px rgba(28, 27, 25, 0.1);
+  z-index: 1;
+}
+
+.pub-cards .item-title {
+  font-size: 1.08rem;
+}
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.pub-btn {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.pub-btn:hover {
+  color: var(--bg);
+  background: var(--accent);
+}
+
 /* Entries (CV page) */
 .entry {
   margin-bottom: 1.8rem;
@@ -386,6 +426,25 @@ h1 {
   font-style: italic;
   font-size: 0.87rem;
   color: var(--text-muted);
+}
+
+.quip {
+  margin: 1.4rem 0 0;
+  padding: 0.7rem 0 0.7rem 1rem;
+  border-left: 3px solid var(--brand-blue);
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.quip p {
+  margin: 0 0 0.3rem;
+}
+
+.quip cite {
+  display: block;
+  font-style: normal;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
 }
 
 .plain-list {
