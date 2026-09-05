@@ -101,14 +101,21 @@ a {
 }
 
 .site-nav a {
-  font-family: var(--font-sans);
-  font-size: 0.83rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
   color: var(--text-muted);
   text-decoration: none;
-  letter-spacing: 0.02em;
-  padding: 0.35rem 0.7rem;
   border-radius: 999px;
   transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.site-nav a svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: currentColor;
 }
 
 .site-nav a:hover,
