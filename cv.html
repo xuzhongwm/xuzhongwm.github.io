@@ -113,6 +113,26 @@
               <a href="files/CV.pdf">Download the CV</a> instead.
             </p>
           </object>
+
+          <!-- Mobile browsers won't scroll a PDF inside <object>, so on narrow
+               screens the pages are rendered here and scroll with the page. -->
+          <div id="pdf-pages" class="pdf-pages" data-pdf="files/CV.pdf" hidden>
+            <p class="pdf-note">Loading CV…</p>
+          </div>
+
+          <div id="pdf-fallback" class="pdf-fallback" hidden>
+            <p>The CV can't be displayed inline on this device.</p>
+            <p>
+              <a
+                class="pill pill-primary"
+                href="files/CV.pdf"
+                target="_blank"
+                rel="noopener"
+              >
+                Open the PDF
+              </a>
+            </p>
+          </div>
         </div>
       </section>
     </main>

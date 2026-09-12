@@ -864,6 +864,28 @@ main { counter-reset: section; }
   letter-spacing: 0.02em;
 }
 
+.exp-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
+.exp-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.exp-meta svg {
+  width: 13px;
+  height: 13px;
+  flex: none;
+  opacity: 0.75;
+}
+
 .exp-item p {
   margin: 0;
   font-size: 0.95rem;
@@ -920,6 +942,28 @@ main { counter-reset: section; }
   border-radius: 12px;
   box-shadow: var(--shadow-md);
   background: var(--surface);
+}
+
+/* Rendered pages and the link-out card are mobile-only; see cv.html. */
+.pdf-pages,
+.pdf-fallback { display: none; }
+
+.pdf-page {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  background: #fff;
+}
+
+.pdf-note {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-faint);
+  text-align: center;
+  padding: 2rem 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -1073,6 +1117,18 @@ main { counter-reset: section; }
   .icon-rail {
     padding-left: 0;
     border-left: none;
+  }
+
+  .pdf-embed { display: none; }
+
+  .pdf-pages:not([hidden]) {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .pdf-fallback:not([hidden]) {
+    display: block;
+    text-align: center;
   }
 }
 

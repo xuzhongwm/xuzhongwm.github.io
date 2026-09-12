@@ -166,6 +166,91 @@
   map.forEach((_link, section) => observer.observe(section));
 })();
 
+/* CV pages on small screens -------------------------------------------- */
+
+(function () {
+  const host = document.getElementById("pdf-pages");
+  if (!host) return;
+
+  const fallback = document.getElementById("pdf-fallback");
+  const src = host.getAttribute("data-pdf");
+  const narrow = window.matchMedia("(max-width: 860px)");
+
+  const LIB = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";
+  const WORKER =
+    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+  let started = false;
+
+  function loadLib() {
+    return new Promise((resolve, reject) => {
+      const tag = document.createElement("script");
+      tag.src = LIB;
+      tag.onload = resolve;
+      tag.onerror = () => reject(new Error("pdf.js unavailable"));
+      document.head.appendChild(tag);
+    });
+  }
+
+  function renderPage(pdf, num) {
+    return pdf.getPage(num).then((page) => {
+      const unscaled = page.getViewport({ scale: 1 });
+      const width = Math.min(host.clientWidth || 640, 900);
+      // Cap the pixel ratio so a multi-page CV can't exhaust phone memory.
+      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+      const viewport = page.getViewport({
+        scale: (width / unscaled.width) * ratio,
+      });
+
+      const canvas = document.createElement("canvas");
+      canvas.className = "pdf-page";
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      canvas.setAttribute("role", "img");
+      canvas.setAttribute("aria-label", "CV page " + num);
+
+      const note = host.querySelector(".pdf-note");
+      if (note) note.remove();
+      host.appendChild(canvas);
+
+      return page.render({
+        canvasContext: canvas.getContext("2d"),
+        viewport: viewport,
+      }).promise;
+    });
+  }
+
+  function render() {
+    if (started) return;
+    started = true;
+    host.hidden = false;
+
+    loadLib()
+      .then(() => {
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc = WORKER;
+        return window.pdfjsLib.getDocument(src).promise;
+      })
+      .then((pdf) => {
+        let chain = Promise.resolve();
+        for (let i = 1; i <= pdf.numPages; i += 1) {
+          chain = chain.then(() => renderPage(pdf, i));
+        }
+        return chain;
+      })
+      .catch(() => {
+        host.hidden = true;
+        if (fallback) fallback.hidden = false;
+      });
+  }
+
+  function sync() {
+    if (narrow.matches) render();
+  }
+
+  narrow.addEventListener("change", sync);
+  sync();
+})();
+
 /* Last updated (from GitHub) ------------------------------------------- */
 
 (function () {
