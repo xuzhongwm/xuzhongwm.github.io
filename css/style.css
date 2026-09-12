@@ -345,6 +345,9 @@ img { max-width: 100%; }
   align-items: flex-start;
   justify-content: space-between;
   gap: 2.4rem;
+  /* Clears the avatar's glow, which bleeds 7px past the image, so the last
+     pill below can't collide with it. */
+  margin-bottom: 2rem;
 }
 
 .hero-head { min-width: 0; }
@@ -1139,6 +1142,8 @@ main { counter-reset: section; }
     flex-direction: column-reverse;
     align-items: flex-start;
     gap: 1.6rem;
+    /* Stacked here, so the avatar is no longer beside the pills. */
+    margin-bottom: 1.4rem;
   }
 
   .avatar {
