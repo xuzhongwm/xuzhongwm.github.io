@@ -819,6 +819,26 @@ main { counter-reset: section; }
   border-color: color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
+/* Pointer to the full record, since the list above is curated. */
+.pub-more {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem 1.3rem;
+  margin-top: 1.7rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.pub-more p {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 42ch;
+}
+
 /* --------------------------------------------------------------------------
    Experience list
    -------------------------------------------------------------------------- */
