@@ -1081,6 +1081,155 @@ main { counter-reset: section; }
 }
 
 /* --------------------------------------------------------------------------
+   Background scene
+   -------------------------------------------------------------------------- */
+
+.scene {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* Large viewport height, so mobile toolbars showing/hiding never resize
+     the canvas mid-scroll. */
+  height: 100lvh;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.2s var(--ease);
+}
+
+.scene.is-ready { opacity: 1; }
+
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* With the scene running, page bands turn translucent so it shows through;
+   the dotted hero texture gives way to the graph. */
+:root.has-scene .hero { background: transparent; }
+:root.has-scene .hero::before { display: none; }
+:root.has-scene .hero::after { opacity: 0.7; }
+
+:root.has-scene .section--alt {
+  background: color-mix(in srgb, var(--bg-alt) 62%, transparent);
+}
+
+:root.has-scene .site-footer {
+  background: color-mix(in srgb, var(--bg) 55%, transparent);
+}
+
+/* Linked state: the item whose cluster is lit in the scene. Mirrors hover
+   so keyboard focus and taps get the same feedback. */
+.direction.is-linked,
+.direction:focus-within,
+.pub-card.is-linked,
+.pub-card:focus-within {
+  box-shadow: var(--shadow-lg);
+  border-color: color-mix(in srgb, var(--accent) 28%, var(--border));
+}
+
+.direction.is-linked::before,
+.direction:focus-within::before { transform: scaleX(1); }
+
+.pub-card.is-linked::before,
+.pub-card:focus-within::before { transform: scaleY(1); }
+
+.exp-item.is-linked,
+.exp-item:focus-within {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.panel {
+  transition: border-color 0.28s var(--ease), box-shadow 0.28s var(--ease);
+}
+
+.panel:hover,
+.panel.is-linked,
+.panel:focus-within {
+  border-color: color-mix(in srgb, var(--accent) 28%, var(--border));
+  box-shadow: var(--shadow-md);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: background-color 0.18s var(--ease), border-color 0.18s var(--ease);
+}
+
+.tag[data-graph]:hover,
+.tag.is-linked {
+  background: color-mix(in srgb, var(--accent-soft) 70%, var(--accent) 12%);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.tag-glyph {
+  display: none;
+  width: 0.78rem;
+  height: 0.78rem;
+  flex: none;
+}
+
+:root.js .tag-glyph { display: block; }
+
+.tag-glyph path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 0.9;
+  opacity: 0.55;
+}
+
+.tag-glyph .g1 { fill: var(--accent); }
+.tag-glyph .g2 { fill: #2b8a83; }
+.tag-glyph .g3 { fill: #6a63a8; }
+
+.tag-item { display: flex; }
+
+.tag-btn {
+  margin: 0;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+.tag-btn:hover .tag-glyph,
+.tag-btn:focus-visible .tag-glyph {
+  transform: rotate(120deg);
+}
+
+.tag-glyph { transition: transform 0.5s var(--ease); }
+
+.scene-note {
+  position: fixed;
+  left: 50%;
+  bottom: 1.2rem;
+  z-index: 45;
+  max-width: min(30rem, calc(100% - 2rem));
+  margin: 0;
+  padding: 0.55rem 0.95rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--text);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  transform: translate(-50%, 8px);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+  pointer-events: none;
+}
+
+.scene-note.is-shown {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* --------------------------------------------------------------------------
    Motion
    -------------------------------------------------------------------------- */
 
@@ -1187,6 +1336,8 @@ main { counter-reset: section; }
 @media print {
   .site-header,
   .progress-bar,
+  .scene,
+  .scene-note,
   .back-to-top,
   .hero::before,
   .hero::after { display: none !important; }

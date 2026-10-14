@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body id="top">
+    <canvas id="scene" class="scene" aria-hidden="true"></canvas>
     <div class="progress-bar" id="progress-bar"></div>
 
     <header class="site-header" id="site-header">
@@ -231,10 +232,18 @@
 
           <ul class="tag-row">
             <li class="tag-label">Interests</li>
-            <li class="tag">Large Language Models</li>
-            <li class="tag">Agents</li>
-            <li class="tag">Reinforcement Learning</li>
-            <li class="tag">Graph Theory</li>
+            <li class="tag" data-graph="llm">Large Language Models</li>
+            <li class="tag" data-graph="agents">Agents</li>
+            <li class="tag" data-graph="rl">Reinforcement Learning</li>
+            <li class="tag" data-graph="graph recolor">
+              <svg class="tag-glyph" viewBox="0 0 12 12" aria-hidden="true" focusable="false">
+                <path d="M6 2.4 2.4 9.2h7.2Z" />
+                <circle class="g1" cx="6" cy="2.4" r="1.9" />
+                <circle class="g2" cx="2.4" cy="9.2" r="1.9" />
+                <circle class="g3" cx="9.6" cy="9.2" r="1.9" />
+              </svg>
+              Graph Theory
+            </li>
           </ul>
         </div>
       </section>
@@ -252,7 +261,7 @@
           </p>
 
           <ul class="card-grid reveal-stagger">
-            <li class="direction">
+            <li class="direction" data-graph="moa">
               <span class="direction-num" aria-hidden="true"></span>
               <h3>Multi-Objective Alignment</h3>
               <p>
@@ -261,7 +270,7 @@
                 coding, and tool usage.
               </p>
             </li>
-            <li class="direction">
+            <li class="direction" data-graph="unlearn">
               <span class="direction-num" aria-hidden="true"></span>
               <h3>Unlearning</h3>
               <p>
@@ -279,7 +288,7 @@
           <h2>Selected Publications &amp; Preprints</h2>
 
           <ul class="pub-list-home reveal-stagger">
-            <li class="pub-card">
+            <li class="pub-card" data-graph="edit moike">
               <div class="pub-venue-row">
                 <span class="badge badge-accent">EMNLP 2026 Findings</span>
                 <span class="badge">Multi-Objective RL</span>
@@ -355,7 +364,7 @@
           <h2>Industry Experience</h2>
 
           <ul class="exp-list reveal-stagger">
-            <li class="exp-item">
+            <li class="exp-item" data-graph="anytime">
               <div class="exp-head">
                 <h3>AnytimeAI</h3>
                 <span class="exp-role">ML engineer intern</span>
@@ -365,7 +374,7 @@
                 routing tool cut inference costs <strong>~60%</strong>.
               </p>
             </li>
-            <li class="exp-item">
+            <li class="exp-item" data-graph="bestlink">
               <div class="exp-head">
                 <h3>Bestlink Technology</h3>
                 <span class="exp-role">ML engineer intern</span>
@@ -383,7 +392,7 @@
         <div class="wrap">
           <h2>Projects</h2>
 
-          <div class="panel reveal">
+          <div class="panel reveal" data-graph="moike edit">
             <div class="panel-head">
               <h3>MO-IKE</h3>
               <span class="badge">Python · PyTorch</span>
@@ -418,7 +427,7 @@
             </div>
           </div>
 
-          <div class="panel reveal">
+          <div class="panel reveal" data-graph="akita">
             <div class="panel-head">
               <h3>Akita</h3>
               <span class="badge">Go · SQLite</span>
@@ -450,7 +459,7 @@
             </div>
           </div>
 
-          <div class="panel reveal">
+          <div class="panel reveal" data-graph="recolor graph">
             <div class="panel-head">
               <h3>Graph Recoloring</h3>
               <span class="badge">React · Vite</span>
@@ -510,5 +519,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/scene.js" defer></script>
   </body>
 </html>
